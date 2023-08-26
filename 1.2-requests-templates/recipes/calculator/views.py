@@ -19,6 +19,17 @@ DATA = {
     # можете добавить свои рецепты ;)
 }
 
+def get_hello(request):
+    msg = {
+        'hi': 'Hello my friends!'
+    }
+    return render(request, 'calculator/main.html', msg)
+
+def get_recipe(request):
+    # global DATA
+    context = DATA
+    return render(request, 'calculator/index.html', context)
+
 # Напишите ваш обработчик. Используйте DATA как источник данных
 # Результат - render(request, 'calculator/index.html', context)
 # В качестве контекста должен быть передан словарь с рецептом:
