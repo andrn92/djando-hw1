@@ -15,9 +15,9 @@ Including another URLconf
 """
 
 from django.urls import path
-from calculator.views import get_recipe, get_hello
+from calculator.views import say_hello, get_products
 
 urlpatterns = [
-    path('recipe/', get_recipe, name='recipe'),
-    path('', get_hello, name='hello'),
+    path('hello/<name>/', say_hello),
+    path('<food>/', get_products),
 ]

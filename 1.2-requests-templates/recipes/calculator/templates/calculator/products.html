@@ -1,0 +1,10 @@
+{% extends 'calculator/layout.html' %}
+
+{% block content %}
+    {% for ingredient, amount in food.items%}
+        <p style="font-size: 25px; ">{{ ingredient }}: {{ amount }}</p>
+    {% empty %}
+        <p>I don't know such a recipe :(</p>
+    {% endfor %}
+{% endblock content %}
+
