@@ -1,0 +1,27 @@
+{% extends "books/base.html" %}
+
+{% block title %}{{ book.name }}{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <h1><a href="{% url 'books' %}">Каталог</a></h1>
+        </div>
+        <div class="row">
+            <div class="book col-md-4">
+                <a href="#"><h2>{{ book.name }}</h2></a>
+                <p>Author: {{ book.author }}</p>
+                <p>Date published: {{ book.pub_date|date:'Y-m-d'}}</p>
+            </div>
+        </div>
+        <div class="row">
+            {% if previos_page and next_page %}
+                <p><a href="{% url 'date_published' previos_page %}"><{{ previos_page }}</a> <a href="{% url 'date_published' next_page %}">{{ next_page }}></a></p>
+            {% elif previos_page and not next_page %}
+                <a href="{% url 'date_published' previos_page %}"><p><{{ previos_page }}></p></a>
+            {% elif next_page and not previos_page %}
+                <a href="{% url 'date_published' next_page %}"><p><{{ next_page }}></p></a>
+            {% endif %}
+            
+        </div>
+    </div>
+{% endblock content %}
