@@ -12,3 +12,7 @@
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
+.row .date_publish {
+    text-decoration: none;
+}

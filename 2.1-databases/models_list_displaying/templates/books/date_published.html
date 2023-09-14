@@ -15,11 +15,11 @@
         </div>
         <div class="row">
             {% if previos_page and next_page %}
-                <p><a href="{% url 'date_published' previos_page %}"><{{ previos_page }}</a> <a href="{% url 'date_published' next_page %}">{{ next_page }}></a></p>
+                <p><a href="{% url 'date_published' previos_page %}" class="date_publish"><{{ previos_page }}</a> <a href="{% url 'date_published' next_page %}" class="date_publish">{{ next_page }}></a></p>
             {% elif previos_page and not next_page %}
-                <a href="{% url 'date_published' previos_page %}"><p><{{ previos_page }}></p></a>
+                <a href="{% url 'date_published' previos_page %}" class="date_publish"><p><{{ previos_page }}></p></a>
             {% elif next_page and not previos_page %}
-                <a href="{% url 'date_published' next_page %}"><p><{{ next_page }}></p></a>
+                <a href="{% url 'date_published' next_page %}" class="date_publish"><p><{{ next_page }}></p></a>
             {% endif %}
             
         </div>
