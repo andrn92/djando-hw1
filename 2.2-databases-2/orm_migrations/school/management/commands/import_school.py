@@ -12,10 +12,3 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         with open('school.json', 'r', encoding='utf8') as file:
             rows = json.load(file)
-
-        # for row in rows:
-        #     if row['model'] == 'school.teacher':
-        #         Teacher.objects.create(id=row['pk'], name=row['fields']['name'], subject=row['fields']['subject'])
-        # for row in rows:
-        #     if row['model'] == 'school.student':
-        #         Student.objects.create(id=row['pk'], name=row['fields']['name'], teacher=row['fields']['teacher'], group=row['fields']['group'])
