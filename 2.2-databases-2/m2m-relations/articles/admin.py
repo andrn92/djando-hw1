@@ -19,7 +19,7 @@ class ScopeInlineFormset(BaseInlineFormSet):
             # а пользователю выведется соответствующее сообщение об ошибке
             if value:
                 list_values.append(value)
-        if True not in list_values or list_values.count(True) > 1:
+        if not list_values or list_values.count(True) > 1:
             raise ValidationError('Error')
         return super().clean()  # вызываем базовый код переопределяемого метода
 
