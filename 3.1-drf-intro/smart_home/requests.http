@@ -19,7 +19,7 @@ Content-Type: application/json
 ###
 
 # обновление датчика
-PATCH {{baseUrl}}/api/v1/sensor-list/7/
+PATCH {{baseUrl}}/api/v1/sensor-list/4/
 Content-Type: application/json
 
 {
@@ -33,14 +33,14 @@ POST {{baseUrl}}/api/v1/add-measurement/
 Content-Type: application/json
 
 {
-  "sensor": 7,
+  "sensor": 4,
   "temperature": 22.3
 }
 
 ###
 
 # получение информации по датчику
-GET {{baseUrl}}/api/v1/sensor-list/7/
+GET {{baseUrl}}/api/v1/sensor-list/4/
 Content-Type: application/json
 
 ###

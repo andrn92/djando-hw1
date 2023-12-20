@@ -25,8 +25,8 @@ class AddMeasurement(views.APIView):
         return response.Response({'measurements': list(measurements)})
     
     def post(self, request):
-        measurements = Measurement.objects.create(temperature = request.data['temperature'], sensor_id = request.data['sensor'])
-        return response.Response({'measurements': model_to_dict(measurements)})
+        measurement = Measurement.objects.create(temperature = request.data['temperature'], sensor_id = request.data['sensor'])
+        return response.Response({'measurement': model_to_dict(measurement)})
     
 
     
